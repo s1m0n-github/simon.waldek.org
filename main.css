@@ -18,7 +18,7 @@ header {
 	justify-content: space-between;
 	
 	/*responsive background image*/
-    background-image: url('test.png');
+    background-image: url('test.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -73,3 +73,5 @@ footer {
 		display: none;
 	}
 }
+
+/* trololol die zweite */
