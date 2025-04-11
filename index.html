@@ -3,15 +3,15 @@
 <html lang="de">
 	<head>
 		<title>Homepage von Simon Waldek</title>
-		<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	</head>
 
-	<body>
+	<body class="home">
 		<header>
-			<img class="language" src="./germany-flag-icon.svg">
-<!--			<img class="language" src="./united-kingdom-flag-icon.svg">-->
+			<img class="language" src="./deutsch.svg">
+<!--			<img class="language" src="./english.svg">-->
 			<text>
 				<h1>Simon Waldek</h1>
 				<p>saxophonist, programmer, big band enthusiast</p>
@@ -24,7 +24,7 @@
 		</header>
 		<main>
 			<section class="description">
-				<h2>Über mich</h2>
+				<h2><a href="about/index.html" class="transition-link">Über mich</a></h2>
 				<p>Eine kurze Biografie</p>
 			</section>
 			<section class="description">
@@ -40,7 +40,7 @@
 				<p>Ich programmiere auch</p>
 			</section>
 			<section class="description">
-				<h2>Events</h2>
+				<h2>Technik</h2>
 				<p>Live oder im Studio – Technik kann ich auch</p>
 			</section>
 		</main>
@@ -48,5 +48,6 @@
 			<a href="/">Kontakt</a>
 			<a href="/">Impressum</a>
 		</footer>
+		<script src="transition.js"></script>
 	</body>
 </html>

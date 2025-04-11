@@ -1,0 +1,187 @@
+@font-face {
+	font-family: Montserrat;
+	src: url(Montserrat.ttf);
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	font-family: Montserrat, sans-serif;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/* === Gemeinsame Stile === */
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+	background-image: url('test.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 45%;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+.language {
+	width: 4em;
+	align-self: flex-end;
+	margin-top: 2em;
+	margin-right: 2em;
+}
+
+#links img {
+	width: 4em;
+}
+
+#lang {
+	border-style: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* === Startseite-spezifisch === */
+
+body.home main {
+	flex-direction: row;
+	justify-content: space-evenly;
+	display: flex;
+}
+
+body.home header {
+	flex-grow: 1;
+}
+
+/* === Unterseite-spezifisch === */
+
+body.subpage .navbar {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+body.subpage main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+body.subpage .content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+body.subpage .text {
+	margin: 20px;
+	width: 60%;
+	text-align: justify;
+	font-size: 110%;
+	letter-spacing: 0.5px;
+	line-height: 135%;
+}
+
+body.subpage img:not(#lang) {
+	margin: 50px;
+	width: 20%;
+	border: 3px #573B23;
+	border-style: solid none none solid;
+}
+
+/* === Responsiveness === */
+
+@media screen and (max-width: 500px) {
+	.description p {
+		display: none;
+	}
+}
+
+/* === Animierte Übergänge === */
+
+body.transition-in-up {
+	animation: slideInUp 1s ease-out forwards;
+}
+
+body.transition-in-down {
+	animation: slideInDown 1s ease-out forwards;
+}
+
+@keyframes slideInUp {
+	0% { transform: translateY(100%); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+	0% { transform: translateY(-100%); }
+	100% { transform: translateY(0); }
+}
+
+#page-overlay::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0); /* Start: transparent */
+	animation: dimOut 1s forwards;
+}
+
+#page-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 10;
+	overflow: hidden;
+	pointer-events: none;
+	animation: blurOut 1s forwards;
+}
+
+@keyframes blurOut {
+	0% {
+		filter: blur(0px);
+	}
+	100% {
+		filter: blur(8px);
+	}
+}
+
+@keyframes dimOut {
+	0% {
+		background: rgba(0, 0, 0, 0);
+	}
+	100% {
+		background: rgba(0, 0, 0, 0.1); /* Leichtes Abdunkeln */
+	}
+}
+
+#new-page {
+	position: fixed;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: white;
+	z-index: 20;
+	transition: top 1s ease-out;
+	pointer-events: none; /* Damit keine Maus-Interaktion möglich ist */
+}
